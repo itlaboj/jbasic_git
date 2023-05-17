@@ -8,6 +8,7 @@ public class Sample33 {
 		arai(10, 20);
 		int result = okada(100, 200);
 		System.out.println(result);
+		System.out.println(okada(1000, 2000));
 	}
 	
 	//メソッドの定義
