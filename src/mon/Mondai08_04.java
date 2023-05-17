@@ -6,8 +6,8 @@ public class Mondai08_04 {
 
 	public static void main(String[] args) {
 		//キーボード入力のおまじない
-		Scanner scan = new Scanner(System.in)
-				;
+		Scanner scan = new Scanner(System.in);
+		
 		int[] score = new int[5];
 		
 		for (int i = 0; i < score.length; i++) {
