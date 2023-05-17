@@ -10,14 +10,25 @@ public class Mondai09_03 {
 		System.out.print("点数を入力してください：");
 		int score = scan.nextInt();
 		
-		judge(score);
+		String result = judge(score);
+		System.out.println(score + "は" + result + "です。");
 	}
 
-	static void judge(int score) {
+	static String judge(int score) {
+		String result = "不合格";
+		
 		if (score >= 70) {
-			System.out.println(score + "は合格です。");
-		} else {
-			System.out.println(score + "は不合格です。");
+			result = "合格";
 		}
+		
+		return result;
 	}
+	
+//	static String judge(int score) {
+//		if (score >= 70) {
+//			return "合格";
+//		} else {
+//			return "不合格";
+//		}
+//	}
 }
