@@ -8,6 +8,11 @@ public class Sample27 {
 		for (int i = 0; i < id.length; i++) {
 			System.out.println(id[i]);
 		}
+		
+		//for (データ型 変数名 : 配列名)
+		for (String name : id) {
+			System.out.println(name);
+		}
 	}
 
 }
