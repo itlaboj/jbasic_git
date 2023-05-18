@@ -14,8 +14,8 @@ public class Start {
 		
 		Human h2 = new Human();
 		
-		h2.name = "佐藤二朗";
-		h2.age = 35;
+//		h2.name = "佐藤二朗";
+//		h2.age = 35;
 		
 		h2.introduce();
 		h2.walk();
