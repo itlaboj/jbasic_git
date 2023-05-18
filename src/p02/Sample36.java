@@ -11,10 +11,15 @@ public class Sample36 {
 		
 		System.out.println();
 		
-		for (int i = list.length -1; i >= 0; i--) {
+		for (int i = list.length - 1; i >= 0; i--) {
 			System.out.println(list[i]);
 		}
 		
+		System.out.println();
+		
+		for (int x : list) {
+			System.out.println(x);
+		}
 	}
 
 }
