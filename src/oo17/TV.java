@@ -5,6 +5,10 @@ public class TV {
 	private int ch; //チャンネル
 	
 	//コンストラクタ
+	public TV() {
+		
+	}
+	
 	public TV(int ch) {
 		this.ch = ch;
 	}

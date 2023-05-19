@@ -6,7 +6,8 @@ public class Mobile extends TV {
 	
 	//コンストラクタ
 	public Mobile(int ch, String telNo) {
-		super(ch);
+		super();
+		//super(ch);
 		this.telNo = telNo;
 	}
 	
