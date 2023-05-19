@@ -1,4 +1,4 @@
-package oo06;
+package oo07;
 
 public class Human {
 	//フィールド（メンバ変数）の定義
@@ -7,13 +7,13 @@ public class Human {
 	
 	//コンストラクタの定義
 	Human() {
-		System.out.println("コンストラクタです。");
+		
 	}
 	
-//	Human(String n, int a) {
-//		name = n;
-//		age = a;
-//	}
+	Human(String n, int a) {
+		name = n;
+		age = a;
+	}
 	
 	//メソッドの定義
 	void introduce() { //自己紹介
