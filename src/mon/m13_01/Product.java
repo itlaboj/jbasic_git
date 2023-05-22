@@ -5,7 +5,7 @@ public class Product {
 	int price; //価格
 	
 	//メソッド
-	void showPrice() {
+		void showPrice() {
 		System.out.println("価格：" + price + "円");
 	}
 }
