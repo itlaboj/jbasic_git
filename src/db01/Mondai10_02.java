@@ -37,8 +37,6 @@ public class Mondai10_02 {
 			e.printStackTrace();
 		} 
 		
-		
-		
 		//実行するSQL文
 		String sql = "INSERT INTO emp VALUES(?, ?, ?, ?)";
 		
