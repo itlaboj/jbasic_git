@@ -1,6 +1,6 @@
 package oo35;
 
-public class Sample06 {
+public class Sample07 {
 
 	public static void main(String[] args) {
 		try {
@@ -17,6 +17,10 @@ public class Sample06 {
 	}
 	
 	static void waru(int x, int y) throws Exception {
+		if (y == 0) {
+			throw new Exception("０で割ったからエラーだよ！"); //明示的に例外オブジェクトをスローする
+		}
+		
 		System.out.println(x / y); //ArithmeticException
 	}
 
