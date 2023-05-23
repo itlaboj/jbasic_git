@@ -22,14 +22,27 @@ public class Sample03 {
 			e.printStackTrace();
 		} 
 		
+		//実行するSQL文
 		String sql = "SELECT id, name, age FROM Members";
 		
 		try (
+			//データベースへの接続
 			Connection con = DriverManager.getConnection(url, user, pass);
+				
+			//SQL文の実行の準備
 			PreparedStatement ps = con.prepareStatement(sql);
 		) {
-		
+			//SQL文の実行と結果の取得
 			ResultSet rs = ps.executeQuery();
+			
+			//カーソルを移動しながらレコードを表示
+			while (rs.next() == true) {
+				int id = rs.getInt("id");
+				String name = rs.getString("name");
+				int age = rs.getInt("age");
+				
+				System.out.println(id + "\t" + name + "\t" + age);
+			}
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
