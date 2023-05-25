@@ -8,22 +8,10 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MemberDAO {
-	//DB接続情報の宣言
-	private String url = "jdbc:postgresql:id01"; //DB
-	private String user = "postgres";
-	private String pass = "himitu";
+public class MemberDAO extends DAO {
 	
 	//全権検索用メソッド
 	public List<Member> findAll() {
-		try {
-			//JDBCドライバ登録
-			Class.forName("org.postgresql.Driver");
-		} catch (ClassNotFoundException e) {
-			System.out.println("JDBCドライバが利用できません！");
-			e.printStackTrace();
-		} 
-		
 		//実行するSQL文
 		String sql = "SELECT id, name, age FROM Members";
 		
@@ -31,7 +19,8 @@ public class MemberDAO {
 		
 		try (
 			//データベースへの接続
-			Connection con = DriverManager.getConnection(url, user, pass);
+				Connection con = DriverManager.getConnection(url, user, pass);
+				Connection con = connect();
 				
 			//SQL文の実行の準備
 			PreparedStatement ps = con.prepareStatement(sql);
@@ -59,14 +48,6 @@ public class MemberDAO {
 
 	//単一検索用メソッド
 	public Member find(int _id) {
-		try {
-			//JDBCドライバ登録
-			Class.forName("org.postgresql.Driver");
-		} catch (ClassNotFoundException e) {
-			System.out.println("JDBCドライバが利用できません！");
-			e.printStackTrace();
-		} 
-		
 		//実行するSQL文
 		String sql = "SELECT id, name, age FROM Members WHERE id = ?";
 		
