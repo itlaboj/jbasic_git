@@ -1,7 +1,6 @@
 package db01;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -19,8 +18,7 @@ public class MemberDAO extends DAO {
 		
 		try (
 			//データベースへの接続
-				Connection con = DriverManager.getConnection(url, user, pass);
-				Connection con = connect();
+			Connection con = connect();
 				
 			//SQL文の実行の準備
 			PreparedStatement ps = con.prepareStatement(sql);
@@ -55,7 +53,7 @@ public class MemberDAO extends DAO {
 		
 		try (
 			//データベースへの接続
-			Connection con = DriverManager.getConnection(url, user, pass);
+			Connection con = connect();
 				
 			//SQL文の実行の準備
 			PreparedStatement ps = con.prepareStatement(sql);
