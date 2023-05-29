@@ -1,4 +1,4 @@
-package db01;
+package db02;
 
 import java.io.Serializable;
 
