@@ -114,4 +114,74 @@ public class MemberDAO extends DAO {
 		
 		return rows;
 	}
+	
+	//変更用メソッド
+	public int update(int id, String name, int age) {
+		//実行するSQL文
+		String sql = "UPDATE Members SET name = ?, age = ? WHERE id = ?";
+		
+		int rows = 0;
+		
+		try (
+			//データベースへの接続
+			Connection con = connect();
+				
+			//SQL文の実行の準備
+			PreparedStatement ps = con.prepareStatement(sql);
+		) {
+			//プレースホルダに値を設定
+			ps.setString(1, name);
+			ps.setInt(2, age);
+			ps.setInt(3, id);
+			
+			con.setAutoCommit(false); //TRANSACTION START;
+			
+			//SQL文の実行と結果の取得
+			rows = ps.executeUpdate();
+			
+			if (rows != 0) {
+				con.commit();
+			} else {
+				con.rollback();
+			}
+		} catch (Exception e) { //} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return rows;
+	}
+	
+	//削除用メソッド
+	public int delete(int id) {
+		//実行するSQL文
+		String sql = "DELETE FROM Members WHERE id = ?";
+		
+		int rows = 0;
+		
+		try (
+			//データベースへの接続
+			Connection con = connect();
+				
+			//SQL文の実行の準備
+			PreparedStatement ps = con.prepareStatement(sql);
+		) {
+			//プレースホルダに値を設定
+			ps.setInt(1, id);
+			
+			con.setAutoCommit(false); //TRANSACTION START;
+			
+			//SQL文の実行と結果の取得
+			rows = ps.executeUpdate();
+			
+			if (rows != 0) {
+				con.commit();
+			} else {
+				con.rollback();
+			}
+		} catch (Exception e) { //} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return rows;
+	}
 }
